@@ -1,108 +1,118 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
 }
 
 header {
-    background-color: #fccaaa;
-    padding: 15px;
-}
-
-.nav-container {
+    background-color: #AAC4C1; /* Sage muda */
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .burger {
-    font-size: 1.5em;
     cursor: pointer;
-}
-
-
-#menu {
     display: flex;
-    flex-direction: column; /* Adjust if needed */
+    align-items: center;
 }
 
-#menu a {
-    color: white;
+.burger-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 10px 0;
+}
+
+nav ul li a {
     text-decoration: none;
-    margin-left: 20px;
+    color: #333;
 }
 
-.hide-menu {
-    display: none;
-}
-
-#menu-label {
-    font-size: 1em;
-    margin-left: 10px;
-}
-
-form {
+/* Form Styling */
+.login-form {
+    max-width: 400px;
+    margin: 20px auto;
     background-color: white;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 30px auto;
-    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 15px;
 }
 
 .form-group label {
-    display: block;
     margin-bottom: 5px;
+    font-size: 14px;
 }
 
-.form-group input, .form-group select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
+.form-group input, select {
+    padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.captcha-group {
-    margin-top: 20px;
+    border-radius: 5px;
 }
 
 button {
-    background-color: #28a745;
+    width: 100%;
+    padding: 10px;
+    background-color: #6EBF8B; /* Sage */
     color: white;
     border: none;
-    padding: 10px 15px;
+    border-radius: 5px;
     cursor: pointer;
-    border-radius: 4px;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #5da778;
 }
 
+/* Footer Styling */
 footer {
     background-color: #333;
     color: white;
-    padding: 15px;
+    padding: 10px 20px;
     text-align: center;
 }
 
 .footer-logo {
     color: white;
     text-decoration: none;
+    font-size: 18px;
 }
 
+/* Burger Menu */
+.hide-menu {
+    display: none;
+}
 
+nav#menu {
+    background-color: #ffffff;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    width: 150px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
 
-
-
-
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
