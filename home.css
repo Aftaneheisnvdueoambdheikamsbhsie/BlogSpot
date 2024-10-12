@@ -8,8 +8,14 @@ body {
 
 /* Header */
 header {
-    background-color: #b3d5a1; /* Warna sage muda/telur asin */
+    background-color: #9bc8a0; /* Warna hijau sage atau telur asin */
     padding: 20px;
+    display: flex;
+    flex-direction: column; /* Menjadi kolom */
+}
+
+/* Header Container */
+.header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,16 +29,15 @@ header {
 }
 
 .burger .line {
-    width: 30px;
+    width: 25px;
     height: 3px;
     background-color: #333;
-    margin: 4px 0;
+    margin: 5px 0;
     transition: 0.4s;
 }
 
 .burger.active .line1 {
     transform: rotate(45deg);
-    margin: 0;
 }
 
 .burger.active .line2 {
@@ -41,7 +46,6 @@ header {
 
 .burger.active .line3 {
     transform: rotate(-45deg);
-    margin: 0;
 }
 
 #menu-label {
@@ -51,13 +55,14 @@ header {
 
 /* Menu Styling */
 nav#menu {
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.9); /* Transparan */
     padding: 10px;
     position: absolute;
     right: 0;
     top: 60px;
-    width: 25%; /* Lebar menu */
-    height: calc(100vh - 60px); /* Full height except header */
+    width: auto; /* Menyesuaikan lebar */
+    max-width: 25%; /* Max lebar 25% */
+    height: auto; /* Tinggi otomatis */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     display: none; /* Initially hidden */
@@ -77,9 +82,9 @@ nav ul li a {
     color: #333;
 }
 
-/* Show Menu */
+/* When menu is visible */
 .show-menu {
-    display: block; /* Tampilkan menu ketika toggle diklik */
+    display: block;
 }
 
 /* Form Styles */
@@ -106,7 +111,7 @@ input[type="text"], input[type="email"], input[type="password"], select {
 }
 
 input[type="submit"] {
-    background-color: #b3d5a1; /* Warna sage muda/telur asin */
+    background-color: #9bc8a0; /* Warna hijau sage atau telur asin */
     color: white;
     padding: 10px;
     border: none;
@@ -116,7 +121,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #9bc886; /* Warna hover */
+    background-color: #f0a8a0; /* Warna hover */
 }
 
 /* Footer */
@@ -135,7 +140,6 @@ footer img {
     cursor: pointer;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
     nav#menu {
         width: 100%;
