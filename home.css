@@ -13,25 +13,67 @@ header {
     justify-content: space-between;
     align-items: center;
 }
-
+/* Burger Menu Icon */
 .burger {
-    cursor: pointer;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
-.burger-icon {
-    font-size: 24px;
-    margin-right: 10px;
+.burger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+.burger .line1 {
+    transform-origin: 0% 0%;
+}
+
+.burger .line3 {
+    transform-origin: 0% 100%;
+}
+
+.burger.active .line1 {
+    transform: rotate(45deg);
+}
+
+.burger.active .line2 {
+    opacity: 0;
+}
+
+.burger.active .line3 {
+    transform: rotate(-45deg);
+}
+
+#menu-label {
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+/* Menu Styling */
+nav#menu {
+    background-color: #ffffff;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    width: 25%;
+    height: calc(100vh - 60px); /* Full height except header */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: none; /* Initially hidden */
 }
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
 }
 
 nav ul li {
-    margin: 10px 0;
+    padding: 10px 0;
 }
 
 nav ul li a {
@@ -39,9 +81,14 @@ nav ul li a {
     color: #333;
 }
 
+/* When menu is visible */
+.show-menu {
+    display: block;
+}
+
 /* Form Styling */
 .login-form {
-    max-width: 400px;
+    max-width: 600px;
     margin: 20px auto;
     background-color: white;
     padding: 20px;
@@ -49,15 +96,15 @@ nav ul li a {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
+.form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
 .form-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
-}
-
-.form-group label {
-    margin-bottom: 5px;
-    font-size: 14px;
 }
 
 .form-group input, select {
@@ -99,20 +146,10 @@ footer {
     display: none;
 }
 
-nav#menu {
-    background-color: #ffffff;
-    padding: 10px;
-    position: absolute;
-    right: 0;
-    top: 60px;
-    width: 150px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-}
-
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: flex-start;
+    nav#menu {
+        width: 100%;
+        top: 60px;
+        left: 0;
     }
 }
