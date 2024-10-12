@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrustPilot-like Review Website</title>
+    <title>Modern Form with Captcha</title>
     <link rel="stylesheet" href="home.css">
 </head>
 <body>
-    <!-- Navbar -->
+    <!-- Header -->
     <header>
         <div class="nav-container">
             <h1>Website Title</h1>
-            <div class="burger" onclick="toggleMenu()">&#9776;</div>
+            <div class="burger" onclick="toggleMenu()">
+                <span class="burger-icon">&#9776;</span> 
+                <span id="menu-label">Menu</span>
+            </div>
             <nav id="menu" class="hide-menu">
                 <a href="Dashboard.html">Dashboard</a>
                 <a href="blog.html">Blog</a>
@@ -23,24 +26,54 @@
 
     <!-- Main Content -->
     <main>
-        <section class="reviews">
-            <h2>User Reviews</h2>
-            <div class="review-card">
-                <img src="user1.jpg" alt="User Profile Picture">
-                <div class="review-text">
-                    <h3>Kassim Obaid</h3>
-                    <p>Best experience ever! Ava was great and very helpful. Excellent support.</p>
-                    <span>Date: October 11, 2024</span>
+        <section class="form-section">
+            <h2>Sign Up Form</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" name="full-name" required>
+
+                    <label for="short-name">Short Name:</label>
+                    <input type="text" id="short-name" name="short-name" required>
                 </div>
-            </div>
-            <div class="review-card">
-                <img src="user2.jpg" alt="User Profile Picture">
-                <div class="review-text">
-                    <h3>S. Glenn</h3>
-                    <p>Tyler was excellent and very helpful with my process.</p>
-                    <span>Date: October 11, 2024</span>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
-            </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address">
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <select id="country" name="country">
+                        <option value="">Select Country</option>
+                        <option value="ID">Indonesia</option>
+                        <option value="US">United States</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="JP">Japan</option>
+                    </select>
+                </div>
+
+                <!-- Captcha -->
+                <div class="captcha-group">
+                    <label>Captcha: Please check the box to prove you're not a robot</label>
+                    <div class="captcha">
+                        <input type="checkbox" id="not-a-robot" required>
+                        <label for="not-a-robot">I'm not a robot</label>
+                    </div>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
         </section>
     </main>
 
@@ -48,11 +81,7 @@
     <footer>
         <div class="footer-content">
             <p>&copy; 2024 Your Website. All Rights Reserved.</p>
-            <ul>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Partners</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
+            <a href="https://www.blogspot.com" class="footer-logo">Go to Blogspot</a>
         </div>
     </footer>
 
