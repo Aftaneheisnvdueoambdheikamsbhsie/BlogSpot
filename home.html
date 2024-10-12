@@ -3,86 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Form with Captcha</title>
+    <title>AndroMedia Digital</title>
     <link rel="stylesheet" href="home.css">
 </head>
 <body>
+
     <!-- Header -->
     <header>
-        <div class="nav-container">
-            <h1>Website Title</h1>
-            <div class="burger" onclick="toggleMenu()">
-                <span class="burger-icon">&#9776;</span> 
+        <div class="header-container">
+            <div class="logo">MyLogo</div>
+            <div class="burger" id="burger-menu">
+                <span class="burger-icon">&#9776;</span>
                 <span id="menu-label">Menu</span>
             </div>
-            <nav id="menu" class="hide-menu">
-                <a href="Dashboard.html">Dashboard</a>
-                <a href="blog.html">Blog</a>
-                <a href="Categori.html">Categories</a>
-                <a href="aboutus.html">About Us</a>
-            </nav>
         </div>
+        <nav id="menu" class="hide-menu">
+            <ul>
+                <li><a href="Dashboard.html">Dashboard</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="Categori.html">Categories</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Main Content -->
     <main>
-        <section class="form-section">
-            <h2>Sign Up Form</h2>
-            <form action="#" method="POST">
-                <div class="form-group">
-                    <label for="full-name">Full Name:</label>
-                    <input type="text" id="full-name" name="full-name" required>
-
-                    <label for="short-name">Short Name:</label>
-                    <input type="text" id="short-name" name="short-name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="address">Address:</label>
-                    <input type="text" id="address" name="address">
-                </div>
-
-                <div class="form-group">
-                    <label for="country">Country:</label>
-                    <select id="country" name="country">
-                        <option value="">Select Country</option>
-                        <option value="ID">Indonesia</option>
-                        <option value="US">United States</option>
-                        <option value="UK">United Kingdom</option>
-                        <option value="JP">Japan</option>
-                    </select>
-                </div>
-
-                <!-- Captcha -->
-                <div class="captcha-group">
-                    <label>Captcha: Please check the box to prove you're not a robot</label>
-                    <div class="captcha">
-                        <input type="checkbox" id="not-a-robot" required>
-                        <label for="not-a-robot">I'm not a robot</label>
-                    </div>
-                </div>
-
-                <button type="submit">Submit</button>
-            </form>
-        </section>
+        <form class="login-form">
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname">
+            </div>
+            <div class="form-group">
+                <label for="nickname">Nickname</label>
+                <input type="text" id="nickname" name="nickname">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address">
+            </div>
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                    <option value="US">United States</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="IN">India</option>
+                    <option value="JP">Japan</option>
+                    <!-- Add more countries here -->
+                </select>
+            </div>
+            <div class="form-group captcha">
+                <label>Captcha</label>
+                <img src="captcha-image.jpg" alt="Captcha">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
     </main>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 Your Website. All Rights Reserved.</p>
-            <a href="https://www.blogspot.com" class="footer-logo">Go to Blogspot</a>
-        </div>
+        <a href="Dashboard.html" class="footer-logo">MyLogo</a>
     </footer>
 
     <script src="script.js"></script>
