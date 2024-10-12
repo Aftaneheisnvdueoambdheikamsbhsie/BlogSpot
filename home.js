@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function toggleMenu() {
         if (menu.classList.contains('hide-menu')) {
             menu.classList.remove('hide-menu');
-            burgerIcon.innerHTML = '&#10006;';  // Change to X
+            burgerIcon.innerHTML = '&#215;';  // Change to X
             menuLabel.innerText = 'Close';
         } else {
             menu.classList.add('hide-menu');
