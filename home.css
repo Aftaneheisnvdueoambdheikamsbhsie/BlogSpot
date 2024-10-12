@@ -103,13 +103,7 @@ nav ul {
     flex-direction: column;
 }
 
-@media (max-width: 768px) {
-    nav#menu {
-        width: 100%;
-        top: 60px;
-        left: 0;
-    }
-}
+@
 
 /* Menu Styling */
 nav#menu {
@@ -121,7 +115,7 @@ nav#menu {
     width: auto; /* Menyesuaikan lebar */
     max-width: 25%; /* Max lebar 25% */
     height: auto; /* Tinggi otomatis */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0,0.2);
     border-radius: 10px;
     display: none; /* Initially hidden */
 }
@@ -139,18 +133,6 @@ nav ul li a {
     text-decoration: none;
     color: #333;
 
-}
-
-/* Form Styles */
-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 label {
