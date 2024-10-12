@@ -29,7 +29,9 @@ header {
 
 #menu {
     display: flex;
+    flex-direction: column; /* Adjust if needed */
 }
+
 
 #menu a {
     color: white;
