@@ -3,120 +3,116 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #f0f4f8;
 }
 
-/* Header */
 header {
-    background-color: #fccAAA; /* Warna hijau muda */
-    padding: 20px;
+    background-color: #AAC4C1; /* Sage muda */
+    padding: 10px 20px;
     display: flex;
-    flex-direction: column; /* Mengatur header menjadi kolom */
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Burger Menu Icon */
 .burger {
+    cursor: pointer;
     display: flex;
     align-items: center;
-    cursor: pointer;
 }
 
 .burger-icon {
-    font-size: 30px; /* Ukuran font untuk burger menu */
-    transition: 0.4s;
-}
-
-/* Menu Styling */
-nav#menu {
-    background-color: rgba(0, 0, 0, 0.8); /* Transparan gelap */
-    padding: 10px;
-    position: absolute;
-    right: 0;
-    top: 60px;
-    width: 25%; /* Lebar menu */
-    height: calc(100vh - 60px); /* Full height except header */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    display: none; /* Awalnya disembunyikan */
+    font-size: 24px;
+    margin-right: 10px;
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
 }
 
 nav ul li {
-    padding: 10px 0;
+    margin: 10px 0;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #fff; /* Warna teks menu */
+    color: #333;
 }
 
-/* Ketika menu terlihat */
-.show-menu {
-    display: block;
-}
-
-/* Form Styles */
-form {
-    display: flex;
-    flex-direction: column;
+/* Form Styling */
+.login-form {
     max-width: 400px;
     margin: 20px auto;
+    background-color: white;
     padding: 20px;
-    background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-label {
-    margin: 10px 0 5px;
-}
-
-input[type="text"], input[type="email"], input[type="password"], select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.form-group {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 15px;
 }
 
-input[type="submit"] {
-    background-color: #fccAAA; /* Warna hijau muda */
-    color: white;
+.form-group label {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.form-group input, select {
     padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #6EBF8B; /* Sage */
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
 }
 
-input[type="submit"]:hover {
-    background-color: #f0a8a0; /* Warna hover */
+button:hover {
+    background-color: #5da778;
 }
 
-/* Footer */
+/* Footer Styling */
 footer {
     background-color: #333;
     color: white;
+    padding: 10px 20px;
     text-align: center;
+}
+
+.footer-logo {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Burger Menu */
+.hide-menu {
+    display: none;
+}
+
+nav#menu {
+    background-color: #ffffff;
     padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    width: 150px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
 
-footer img {
-    width: 50px;
-    cursor: pointer;
-}
-
-/* Media Query */
 @media (max-width: 768px) {
-    nav#menu {
-        width: 100%;
-        top: 60px;
-        left: 0;
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
