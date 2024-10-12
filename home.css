@@ -100,10 +100,9 @@ footer {
 }
 nav#menu {
     background-color: #000000;
-    text-color:white;
-    padding: 10px;
+    padding: 20px;
     position: absolute;
-    right: 20px;
+    right: 0px;
     top: 0px;
     width: 25%;
     height: calc(100vh - 60px); /* Full height except header */
