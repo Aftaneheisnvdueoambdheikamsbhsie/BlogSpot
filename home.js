@@ -1,20 +1,18 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const burger = document.querySelector('#burger-menu');
+// home.js
+document.addEventListener('DOMContentLoaded', function () {
+    const burgerMenu = document.getElementById('burger-menu');
     const menu = document.getElementById('menu');
-    const menuLabel = document.getElementById('menu-label');
-    const burgerLines = document.querySelectorAll('.line');
-
-    function toggleMenu() {
-        if (menu.classList.contains('show-menu')) {
-            menu.classList.remove('show-menu');
-            burger.classList.remove('active'); // Remove "x"
-            menuLabel.innerText = 'Menu';
+    
+    burgerMenu.addEventListener('click', function() {
+        burgerMenu.classList.toggle('active');
+        menu.classList.toggle('show-menu');
+        
+        // Ubah label dari Menu ke Close
+        const menuLabel = document.getElementById('menu-label');
+        if (burgerMenu.classList.contains('active')) {
+            menuLabel.textContent = 'Close';
         } else {
-            menu.classList.add('show-menu');
-            burger.classList.add('active'); // Turn burger into "x"
-            menuLabel.innerText = 'Close';
+            menuLabel.textContent = 'Menu';
         }
-    }
-
-    burger.addEventListener('click', toggleMenu);
+    });
 });
