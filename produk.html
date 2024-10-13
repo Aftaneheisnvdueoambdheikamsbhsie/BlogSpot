@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk</title>
+    <link rel="stylesheet" href="produk.css">
+</head>
+<body>
+
+    <!-- Header Kecil dengan Logo Kecil -->
+    <header class="small-header">
+        <img src="logo-small.png" alt="Logo" class="logo-small">
+    </header>
+
+    <!-- Menu Bergulir -->
+    <nav class="scrolling-menu">
+        <button class="menu-btn left" id="scroll-left">&lt;</button>
+        <div class="menu-items" id="menu-items">
+            <a href="produk.html" class="menu-item active">Produk</a>
+            <a href="official-store.html" class="menu-item">Official Store</a>
+            <a href="partners.html" class="menu-item">Partners</a>
+            <a href="blog.html" class="menu-item">Blog</a>
+        </div>
+        <button class="menu-btn right" id="scroll-right">&gt;</button>
+    </nav>
+
+    <!-- Filter dan Sort Produk -->
+    <section class="filter-sort">
+        <div class="filter-bar">
+            <label for="filter-rating">Filter:</label>
+            <select id="filter-rating">
+                <option value="all">Semua Bintang</option>
+                <option value="5">Bintang 5</option>
+                <option value="4">Bintang 4+</option>
+                <option value="3">Bintang 3+</option>
+                <option value="2">Bintang 2+</option>
+            </select>
+        </div>
+        <div class="sort-bar">
+            <label for="sort-products">Sort:</label>
+            <select id="sort-products">
+                <option value="highest">Bintang Tertinggi</option>
+                <option value="lowest">Bintang Terendah</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- Tampilan Produk -->
+    <section class="product-list">
+        <div class="product">
+            <img src="produk1.jpg" alt="Produk 1">
+            <p>Produk 1</p>
+        </div>
+        <div class="product">
+            <img src="produk2.jpg" alt="Produk 2">
+            <p>Produk 2</p>
+        </div>
+        <div class="product">
+            <img src="produk3.jpg" alt="Produk 3">
+            <p>Produk 3</p>
+        </div>
+        <!-- Tambahkan produk lainnya -->
+    </section>
+
+    <script src="produk.js"></script>
+</body>
+</html>
