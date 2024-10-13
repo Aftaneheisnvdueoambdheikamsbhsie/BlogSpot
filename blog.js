@@ -18,6 +18,5 @@ document.addEventListener('DOMContentLoaded', function() {
             menuLabel.innerText = 'Menu';
         }
     }
-
     burger.addEventListener('click', toggleMenu);
 });
