@@ -32,7 +32,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
             fullscreenEffect.style.opacity = '0';
             setTimeout(() => {
                 document.body.removeChild(fullscreenEffect);
-                document.getElementById('loading').style.display = 'flex';
+                document.getElementById('loading').style.display = 'flex'; // Menampilkan loading
             }, 500); // Menghapus elemen setelah animasi selesai
         }, 1000); // Durasi tampil penuh layar
     }, 500); // Delay sebelum menampilkan efek
@@ -40,7 +40,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     // Menampilkan dan mengaktifkan animasi burger
     const burgers = document.querySelectorAll('.burger');
     burgers.forEach(burger => {
-        burger.classList.add('active');
+        burger.classList.add('active'); // Tambahkan kelas aktif pada burger
     });
 
     // Menampilkan efek gelombang
@@ -49,7 +49,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
 
     // Menambahkan delay sebelum menampilkan loading
     setTimeout(() => {
-        waveAnimation.style.display = 'none';
+        waveAnimation.style.display = 'none'; // Sembunyikan efek gelombang
     }, 1000); // Menampilkan gelombang selama 1 detik
 
     // Mengosongkan nilai semua input
@@ -60,10 +60,10 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     document.getElementById('address').value = '';
     document.getElementById('captcha').value = '';
 
-    // Redirect ke halaman lain setelah 3 detik
+    // Redirect ke halaman produk setelah loading
     setTimeout(() => {
-        window.location.href = 'produk.html';
-    }, 3000); // Durasi tampil loading
+        window.location.href = 'produk.html'; // Ganti dengan halaman produk
+    }, 2000); // Waktu loading 2 detik
 });
 
 // Partikel efek di canvas
