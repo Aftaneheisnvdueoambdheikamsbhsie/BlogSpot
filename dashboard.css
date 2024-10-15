@@ -1,86 +1,64 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.burger {
-    font-size: 2em;
-    cursor: pointer;
-}
-
-#menu {
-    display: flex;
-}
-
-#menu a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-}
-
-.hide-menu {
-    display: none;
-}
-
-.reviews {
+.comment-section {
     padding: 20px;
-}
-
-.review-card {
-    display: flex;
     background-color: white;
-    margin-bottom: 15px;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Tambahkan margin atas untuk jarak */
 }
 
-.review-card img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 20px;
-}
-
-.review-text h3 {
+.profile {
+    display: flex;
+    align-items: center;
     margin-bottom: 10px;
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-footer ul {
-    list-style-type: none;
-}
-
-footer ul li {
-    display: inline;
+.profile-pic {
+    width: 40px; /* Ukuran foto profil */
+    height: 40px;
+    border-radius: 50%;
     margin-right: 10px;
 }
 
-footer ul li a {
+.comment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    height: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #6abf69; /* Sesuaikan warna border */
+    resize: none;
+    font-size: 14px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #6abf69; /* Warna tombol */
     color: white;
-    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #5aa058; /* Warna tombol saat hover */
+}
+
+.comments-list {
+    max-width: 600px;
+    margin: 20px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.comments-list li {
+    background: #e7f7ee; /* Warna latar belakang komentar */
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    position: relative;
 }
