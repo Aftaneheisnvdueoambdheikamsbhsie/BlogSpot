@@ -6,9 +6,6 @@
     align-items: center;
     justify-content: space-between;
 }
-body {
-    position: relative;
-}
 .logo-small {
     width: 40px;
     height: 40px;
