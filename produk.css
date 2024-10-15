@@ -5,6 +5,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%; /* Atur lebar header agar tidak lebih dari 100% */
+    box-sizing: border-box; /* Agar padding tidak menambah lebar elemen */
+    position: relative;
 }
 .logo-small {
     width: 40px;
