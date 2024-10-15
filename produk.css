@@ -30,6 +30,8 @@
     border: none;
     cursor: pointer;
     margin-left: 10px;
+    z-index: 10;
+    height: 100vh;
 }
 
 /* Sidebar Burger Menu */
@@ -39,7 +41,7 @@
     right: 0;
     top: 0;
     width: 200px;
-    height: 1000vh;
+    height: 100vh;
     padding: 20px;
     box-shadow: -5px 0 5px rgba(0, 0, 0, 0.5);
     display: none;
