@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Burger Menu untuk memunculkan sidebar
     const burgerMenu = document.querySelector('.burger-icon');
     const sidebarMenu = document.getElementById('sidebar-menu');
-
+    const body = document.body;
+    
     burgerMenu.addEventListener('click', function() {
         if (sidebarMenu.style.display === 'flex') {
             sidebarMenu.style.display = 'none';
@@ -23,4 +24,13 @@ document.addEventListener('DOMContentLoaded', function() {
             sidebarMenu.style.display = 'flex';
         }
     });
+});
+// Fungsi untuk menutup sidebar ketika mengeklik di luar sidebar
+document.addEventListener('click', (event) => {
+    const isClickInsideMenu = sidebarMenu.contains(event.target);
+    const isClickBurgerIcon = burger.contains(event.target);
+    
+    if (!isClickInsideMenu && !isClickBurgerIcon) {
+        sidebarMenu.style.display = 'none'; // Tutup menu jika mengeklik di luar
+    }
 });
