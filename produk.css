@@ -17,10 +17,11 @@
     color: white;
     margin: 0;
 }
-
+  
 .header-icons {
     display: flex;
     align-items: center;
+    z-index: 101;
 }
 
 .search-icon, .burger-icon {
@@ -47,6 +48,7 @@
     box-shadow: -5px 0 5px rgba(0, 0, 0, 0.5);
     display: none;
     flex-direction: column;
+    z-index: 100; /* Pastikan z-index lebih tinggi dari elemen lain */
 }
 
 #sidebar-menu ul {
