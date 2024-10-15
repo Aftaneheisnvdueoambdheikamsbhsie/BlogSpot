@@ -62,7 +62,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
 
     // Redirect ke halaman lain setelah 3 detik
     setTimeout(() => {
-        window.location.href = 'Dashboard.html';
+        window.location.href = 'produk.html';
     }, 3000); // Durasi tampil loading
 });
 
