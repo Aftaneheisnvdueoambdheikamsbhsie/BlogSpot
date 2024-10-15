@@ -35,7 +35,7 @@
     cursor: pointer;
     margin-left: 10px;
     z-index: 10;
-    height: 100vh;
+    height: auto;
     position:relative;
 }
 
@@ -52,6 +52,7 @@
     display: none;
     flex-direction: column;
     z-index: 100; /* Pastikan z-index lebih tinggi dari elemen lain */
+    overflow-y: auto;
 }
 
 #sidebar-menu ul {
