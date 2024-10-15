@@ -1,18 +1,30 @@
-// Cek apakah ini kunjungan pertama kali
+// Check if this is the first visit
 const isFirstVisit = !localStorage.getItem('hasVisited');
 
 if (isFirstVisit) {
-    // Tampilkan emoji burger saat kunjungan pertama
+    // Display the loading screen with the burger emoji
     const loading = document.getElementById('loading');
-    loading.style.display = 'flex'; // Tampilkan loading
     const burgerEmoji = document.querySelector('.emoji');
-    burgerEmoji.style.display = 'block'; // Tampilkan emoji
+    
+    // Display loading screen
+    loading.style.display = 'flex'; 
+    burgerEmoji.style.display = 'block'; 
 
+    // After 2 seconds, hide the loading screen and show the login form
     setTimeout(() => {
-        loading.style.display = 'none'; // Sembunyikan loading setelah 2 detik
-        localStorage.setItem('hasVisited', true); // Tandai bahwa pengguna sudah mengunjungi
-    }, 2000); // Tampilkan loading selama 2 detik
+        loading.style.display = 'none'; // Hide the loading screen
+        document.getElementById('login-container').style.display = 'block'; // Show the login form
+
+        // Mark that the user has visited
+        localStorage.setItem('hasVisited', true);
+    }, 2000); // Show loading for 2 seconds
+} else {
+    // If it's not the first visit, just show the login form immediately
+    document.getElementById('login-container').style.display = 'block';
 }
+
+// Your existing login form submission logic can go here...
+
 
 document.getElementById('login-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Mencegah form untuk submit secara default
