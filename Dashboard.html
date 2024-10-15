@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrustPilot-like Review Website</title>
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navbar -->
@@ -42,6 +42,20 @@
                 </div>
             </div>
         </section>
+
+        <!-- Komentar Section -->
+        <section class="comment-section">
+            <h2>Tinggalkan Komentar</h2>
+            <div class="profile">
+                <img src="profile.jpg" alt="Profile" class="profile-pic"> <!-- Ganti dengan path foto profil -->
+                <p>Nama Pengguna</p>
+            </div>
+            <form id="commentForm" class="comment-form">
+                <textarea id="comment" placeholder="Tulis komentar..." required></textarea>
+                <button type="submit">Kirim Komentar</button>
+            </form>
+            <ul id="commentsList" class="comments-list"></ul>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -57,5 +71,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="komentar.js"></script> <!-- Tambahkan script untuk komentar -->
 </body>
 </html>
