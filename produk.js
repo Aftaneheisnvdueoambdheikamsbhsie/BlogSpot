@@ -15,22 +15,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // Burger Menu untuk memunculkan sidebar
     const burgerMenu = document.querySelector('.burger-icon');
     const sidebarMenu = document.getElementById('sidebar-menu');
-    const body = document.body;
     
-    burgerMenu.addEventListener('click', function() {
+    burgerMenu.addEventListener('click', function(event) {
+        // Toggle sidebar
         if (sidebarMenu.style.display === 'flex') {
             sidebarMenu.style.display = 'none';
         } else {
             sidebarMenu.style.display = 'flex';
         }
+        
+        // Mencegah event click diteruskan ke event listener lain (supaya sidebar tidak langsung tertutup)
+        event.stopPropagation();
     });
-});
-// Fungsi untuk menutup sidebar ketika mengeklik di luar sidebar
-document.addEventListener('click', (event) => {
-    const isClickInsideMenu = sidebarMenu.contains(event.target);
-    const isClickBurgerIcon = burger.contains(event.target);
-    
-    if (!isClickInsideMenu && !isClickBurgerIcon) {
-        sidebarMenu.style.display = 'none'; // Tutup menu jika mengeklik di luar
-    }
+
+    // Fungsi untuk menutup sidebar ketika mengeklik di luar sidebar
+    document.addEventListener('click', (event) => {
+        const isClickInsideMenu = sidebarMenu.contains(event.target);
+        const isClickBurgerIcon = burgerMenu.contains(event.target);
+        
+        // Tutup menu jika mengeklik di luar sidebar dan burger icon
+        if (!isClickInsideMenu && !isClickBurgerIcon) {
+            sidebarMenu.style.display = 'none';
+        }
+    });
 });
