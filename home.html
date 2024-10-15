@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard.html</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="home.css">
 </head>
 <body>
@@ -12,64 +12,46 @@
     <header>
         <div class="header-container">
             <div class="logo">My Log-in</div>
-            <div class="burger" id="burger-menu">
-                <span class="burger-icon">&#9776;</span>
-                <span id="menu-label">Menu</span>
-            </div>
         </div>
-        <nav id="menu" class="hide-menu">
-            <ul>
-                <li><a href="Dashboard.html">Dashboard</a></li>
-                <li><a href="produk.html">Produk</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="Categori.html">Categories</a></li>
-                <li><a href="coment.html">Riview Produk</a></li>
-                <li><a href="aboutus.html">About Us</a></li>
-            </ul>
-        </nav>
     </header>
 
     <!-- Main Content -->
     <main>
-        <form class="login-form">
+        <form class="login-form" id="login-form">
             <div class="form-row">
                 <div class="form-group">
                     <label for="fullname">Full Name</label>
-                    <input type="text" id="fullname" name="fullname">
+                    <input type="text" id="fullname" name="fullname" required>
                 </div>
                 <div class="form-group">
                     <label for="nickname">Nickname</label>
-                    <input type="text" id="nickname" name="nickname">
+                    <input type="text" id="nickname" name="nickname" required>
                 </div>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email">
+                <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password">
+                <input type="password" id="password" name="password" required>
             </div>
             <div class="form-group">
                 <label for="address">Address</label>
-                <input type="text" id="address" name="address">
-            </div>
-            <div class="form-group">
-                <label for="country">Country</label>
-                <select id="country" name="country">
-                    <option value="US">United States</option>
-                    <option value="UK">United Kingdom</option>
-                    <option value="IN">India</option>
-                    <option value="JP">Japan</option>
-                    <!-- Add more countries here -->
-                </select>
+                <input type="text" id="address" name="address" required>
             </div>
             <div class="form-group captcha">
-                <label>Captcha</label>
-                <img src="captcha-image.jpg" alt="Captcha">
+                <label>Captcha: What is 3 + 2?</label>
+                <input type="text" id="captcha" name="captcha" required>
             </div>
             <button type="submit">Submit</button>
         </form>
+        
+        <!-- Loading Spinner -->
+        <div id="loading" class="loading" style="display: none;">
+            <div class="emoji">🍔</div>
+            <p>Please wait...</p>
+        </div>
     </main>
 
     <!-- Footer -->
