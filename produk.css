@@ -1,11 +1,12 @@
 /* Header kecil dengan logo, judul, search dan burger menu */
 .small-header {
     background-color: #6abf69; /* Warna hijau yang segar */
-    padding: 10px;
+    padding: 10px; /* Padding hanya 10px agar tidak terlalu besar */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%; /* Atur lebar header agar tidak lebih dari 100% */
+    width: 100%; /* Pastikan header menyesuaikan dengan lebar layar */
+    height: 60px; /* Tetapkan tinggi tetap agar tidak terlalu tinggi */
     box-sizing: border-box; /* Agar padding tidak menambah lebar elemen */
     position: relative;
 }
@@ -34,7 +35,7 @@
     cursor: pointer;
     margin-left: 10px;
     z-index: 10;
-    height: 100vh;
+    height: auto;
     position:relative;
 }
 
