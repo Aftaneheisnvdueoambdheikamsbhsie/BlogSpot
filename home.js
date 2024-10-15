@@ -1,3 +1,19 @@
+// Cek apakah ini kunjungan pertama kali
+const isFirstVisit = !localStorage.getItem('hasVisited');
+
+if (isFirstVisit) {
+    // Tampilkan emoji burger saat kunjungan pertama
+    const loading = document.getElementById('loading');
+    loading.style.display = 'flex'; // Tampilkan loading
+    const burgerEmoji = document.querySelector('.emoji');
+    burgerEmoji.style.display = 'block'; // Tampilkan emoji
+
+    setTimeout(() => {
+        loading.style.display = 'none'; // Sembunyikan loading setelah 2 detik
+        localStorage.setItem('hasVisited', true); // Tandai bahwa pengguna sudah mengunjungi
+    }, 2000); // Tampilkan loading selama 2 detik
+}
+
 document.getElementById('login-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Mencegah form untuk submit secara default
 
@@ -37,17 +53,19 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         }, 1000); // Durasi tampil penuh layar
     }, 500); // Delay sebelum menampilkan efek
 
-    // Menampilkan dan mengaktifkan animasi burger
-    const burgers = document.querySelectorAll('.burger');
-    burgers.forEach(burger => {
-        burger.classList.add('active'); // Tambahkan kelas aktif pada burger
-    });
-
     // Menampilkan efek gelombang
     const waveAnimation = document.getElementById('wave-animation');
     waveAnimation.style.display = 'flex';
 
-    // Menambahkan delay sebelum menampilkan loading
+    // Mengatur gelombang untuk full screen
+    waveAnimation.style.position = 'fixed';
+    waveAnimation.style.top = '0';
+    waveAnimation.style.left = '0';
+    waveAnimation.style.width = '100%';
+    waveAnimation.style.height = '100%';
+    waveAnimation.style.zIndex = '9999'; // Pastikan berada di atas semua elemen
+
+    // Menambahkan delay sebelum menyembunyikan efek gelombang
     setTimeout(() => {
         waveAnimation.style.display = 'none'; // Sembunyikan efek gelombang
     }, 1000); // Menampilkan gelombang selama 1 detik
