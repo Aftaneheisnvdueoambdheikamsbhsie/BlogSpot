@@ -1,21 +1,24 @@
 /* Global Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f0f4f8;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 header {
     background-color: #AAC4C1; /* Sage muda */
-    padding: 10px 20px;
+    padding: 15px 20px;
     display: flex;
     justify-content: center; /* Center the logo */
     align-items: center;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
     color: #FFFFFF; /* White logo text */
 }
@@ -24,9 +27,15 @@ header {
     max-width: 400px;
     margin: 20px auto;
     background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
 }
 
 .form-group {
@@ -38,33 +47,43 @@ header {
 .form-group label {
     margin-bottom: 5px;
     font-size: 14px;
+    color: #333; /* Darker text color */
 }
 
 .form-group input {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #6EBF8B; /* Sage focus */
+    outline: none;
 }
 
 button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background-color: #6EBF8B; /* Sage */
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #5da778;
+    background-color: #5da778; /* Darker sage */
 }
 
 footer {
     background-color: #333;
     color: white;
-    padding: 10px 20px;
+    padding: 15px 20px;
     text-align: center;
+    margin-top: auto; /* Push footer to the bottom */
 }
 
 .footer-logo {
@@ -92,4 +111,42 @@ footer {
     0% { transform: scale(1); }
     50% { transform: scale(1.2); } /* Slightly bigger */
     100% { transform: scale(1); }
+}
+
+/* Responsive Styles */
+@media (max-width: 500px) {
+    .login-form {
+        padding: 20px;
+        width: 90%; /* Responsive form width */
+    }
+
+    .logo {
+        font-size: 24px; /* Smaller logo on mobile */
+    }
+}
+
+/* Wave Animation Styles */
+#wave-animation {
+    display: flex;
+    font-size: 50px;
+    animation: wave 1s infinite;
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Particle Effect Styles */
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Agar canvas tidak menghalangi interaksi */
 }
