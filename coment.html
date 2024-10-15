@@ -4,14 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Komentar</title>
-    <link rel="stylesheet" href="coment.css"> <!-- Tambahkan CSS jika perlu -->
+    <link rel="stylesheet" href="styles.css"> <!-- Tambahkan CSS -->
 </head>
 <body>
-    <h1>Halaman Komentar</h1>
-    <form id="commentForm">
-        <textarea id="comment" placeholder="Tulis komentar..." required></textarea>
-        <button type="submit">Kirim Komentar</button>
-    </form>
-    <script src="coment.js"></script>
+    <header class="header">
+        <img src="logo.png" alt="Logo" class="logo"> <!-- Ganti dengan path logo yang sesuai -->
+        <h1>Halaman Komentar</h1>
+    </header>
+
+    <div class="comment-section">
+        <div class="profile">
+            <img src="profile.jpg" alt="Profile" class="profile-pic"> <!-- Ganti dengan path foto profil -->
+            <p>Nama Pengguna</p>
+        </div>
+        <form id="commentForm" class="comment-form">
+            <textarea id="comment" placeholder="Tulis komentar..." required></textarea>
+            <button type="submit">Kirim Komentar</button>
+        </form>
+    </div>
+    
+    <script src="komentar.js"></script>
 </body>
 </html>
