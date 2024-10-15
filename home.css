@@ -10,36 +10,16 @@ header {
     background-color: #AAC4C1; /* Sage muda */
     padding: 10px 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Center the logo */
     align-items: center;
 }
 
-.burger {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
-
-.burger-icon {
+.logo {
     font-size: 24px;
-    margin-right: 10px;
+    font-weight: bold;
+    color: #FFFFFF; /* White logo text */
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 10px 0;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #FFFFFF;;
-}
-
-/* Form Styling */
 .login-form {
     max-width: 400px;
     margin: 20px auto;
@@ -60,7 +40,7 @@ nav ul li a {
     font-size: 14px;
 }
 
-.form-group input, select {
+.form-group input {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -80,7 +60,6 @@ button:hover {
     background-color: #5da778;
 }
 
-/* Footer Styling */
 footer {
     background-color: #333;
     color: white;
@@ -94,30 +73,23 @@ footer {
     font-size: 18px;
 }
 
-/* Burger Menu */
-.hide-menu {
-    display: none;
-}
-nav#menu {
-    background-color: #000000;
-    padding: 20px;
-    position: absolute;
-    right: 0px;
-    top: 0;
-    width: 25%;
-    height: calc(100vh - 60px); /* Full height except header */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-}
-
-nav ul {
+/* Loading Spinner Styles */
+.loading {
+    display: flex;
     flex-direction: column;
-
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 100px); /* Adjust height to center vertically */
+    text-align: center;
 }
 
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+.emoji {
+    font-size: 80px; /* Larger emoji */
+    animation: eat 1s linear infinite; /* Add animation */
+}
+
+@keyframes eat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); } /* Slightly bigger */
+    100% { transform: scale(1); }
 }
