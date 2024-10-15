@@ -1,44 +1,53 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const commentsList = document.getElementById('commentsList');
-    const commentForm = document.getElementById('commentForm');
-    const commentInput = document.getElementById('comment');
+// Sample data for comments
+let comments = [];
 
-    // Ambil komentar dari localStorage
-    const comments = JSON.parse(localStorage.getItem('comments')) || [];
+// Function to display comments in the grid
+function displayComments() {
+    const reviewGrid = document.getElementById('reviewGrid');
+    reviewGrid.innerHTML = ''; // Clear the grid before populating
 
-    // Tampilkan setiap komentar dalam daftar
-    function displayComments() {
-        commentsList.innerHTML = ''; // Kosongkan daftar komentar
-        comments.forEach((comment, index) => {
-            const listItem = document.createElement('li');
-            listItem.textContent = comment;
+    comments.forEach(comment => {
+        const reviewCard = document.createElement('div');
+        reviewCard.classList.add('review-card');
 
-            // Tambahkan tombol untuk menghapus komentar
-            const deleteButton = document.createElement('button');
-            deleteButton.textContent = 'Hapus';
-            deleteButton.addEventListener('click', function() {
-                comments.splice(index, 1); // Hapus komentar dari array
-                localStorage.setItem('comments', JSON.stringify(comments)); // Simpan perubahan
-                displayComments(); // Perbarui tampilan komentar
-            });
-
-            listItem.appendChild(deleteButton);
-            commentsList.appendChild(listItem);
-        });
-    }
-
-    // Event listener untuk mengirim komentar
-    commentForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Mencegah refresh halaman
-        const newComment = commentInput.value.trim();
-        if (newComment) {
-            comments.push(newComment); // Tambahkan komentar baru ke array
-            localStorage.setItem('comments', JSON.stringify(comments)); // Simpan ke localStorage
-            commentInput.value = ''; // Kosongkan input
-            displayComments(); // Perbarui tampilan komentar
-        }
+        reviewCard.innerHTML = `
+            <img src="${comment.profilePic}" alt="Profile Picture">
+            <div class="review-text">
+                <h3>${comment.name}</h3>
+                <p>${comment.comment}</p>
+                <span class="rating">${getStars(comment.rating)}</span>
+                <span>Date: ${comment.date}</span>
+            </div>
+        `;
+        
+        reviewGrid.appendChild(reviewCard);
     });
+}
 
-    // Tampilkan komentar yang ada saat halaman dimuat
-    displayComments();
+// Function to get stars based on rating
+function getStars(rating) {
+    let stars = '';
+    for (let i = 0; i < 5; i++) {
+        stars += `<span class="star">${i < rating ? '★' : '☆'}</span>`;
+    }
+    return stars;
+}
+
+// Handle form submission in comment-form.html
+document.getElementById('commentSubmissionForm')?.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+    const commentText = document.getElementById('comment').value;
+    const ratingValue = document.getElementById('rating').value;
+    
+    const newComment = {
+        name: "Current User", // Replace with actual user name
+        comment: commentText,
+        date: new Date().toLocaleDateString(),
+        profilePic: "user1.jpg", // Replace with actual profile picture
+        rating: parseInt(ratingValue)
+    };
+
+    comments.push(newComment); // Add new comment to the comments array
+    displayComments(); // Update the display
+    document.getElementById('commentSubmissionForm').reset(); // Reset form
 });
