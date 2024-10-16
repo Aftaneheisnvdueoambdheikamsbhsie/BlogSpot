@@ -5,7 +5,7 @@ if (isFirstVisit) {
     // Display the loading screen with the burger emoji
     const loading = document.getElementById('loading');
     const burgerEmoji = document.querySelector('.emoji');
-    
+
     // Display loading screen
     loading.style.display = 'flex'; 
     burgerEmoji.style.display = 'block'; 
@@ -23,13 +23,11 @@ if (isFirstVisit) {
     document.getElementById('login-container').style.display = 'block';
 }
 
-// Your existing login form submission logic can go here...
-
-
+// Handling login form submission
 document.getElementById('login-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Mencegah form untuk submit secara default
+    event.preventDefault(); // Prevent the default form submission
 
-    // Mengambil nilai dari form
+    // Get form values
     const fullname = document.getElementById('fullname').value;
     const nickname = document.getElementById('nickname').value;
     const email = document.getElementById('email').value;
@@ -37,52 +35,52 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     const address = document.getElementById('address').value;
     const captcha = document.getElementById('captcha').value;
 
-    // Cek captcha
+    // Check captcha
     if (captcha !== '5') {
         alert('Captcha tidak benar. Silakan coba lagi.');
         return;
     }
 
-    // Simpan informasi pengguna ke localStorage (jika diperlukan)
+    // Save user information to localStorage (if needed)
     localStorage.setItem('user', JSON.stringify({ fullname, nickname, email, address }));
 
-    // Menampilkan efek penuh layar
+    // Show fullscreen effect
     const fullscreenEffect = document.createElement('div');
     fullscreenEffect.classList.add('fullscreen-effect');
     document.body.appendChild(fullscreenEffect);
     
-    // Menampilkan efek penuh layar
+    // Animate fullscreen effect
     setTimeout(() => {
         fullscreenEffect.style.opacity = '1';
 
-        // Menghilangkan efek setelah beberapa detik
+        // Remove effect after some time
         setTimeout(() => {
             fullscreenEffect.style.opacity = '0';
             setTimeout(() => {
                 document.body.removeChild(fullscreenEffect);
-                document.getElementById('loading').style.display = 'flex'; // Menampilkan loading
-            }, 500); // Menghapus elemen setelah animasi selesai
-        }, 1000); // Durasi tampil penuh layar
-    }, 500); // Delay sebelum menampilkan efek
+                document.getElementById('loading').style.display = 'flex'; // Show loading again
+            }, 500); // Remove element after animation
+        }, 1000); // Fullscreen duration
+    }, 500); // Delay before showing effect
 
-    // Menampilkan efek gelombang
+    // Show wave effect
     const waveAnimation = document.getElementById('wave-animation');
     waveAnimation.style.display = 'flex';
 
-    // Mengatur gelombang untuk full screen
+    // Set wave for full screen
     waveAnimation.style.position = 'fixed';
     waveAnimation.style.top = '0';
     waveAnimation.style.left = '0';
     waveAnimation.style.width = '100%';
     waveAnimation.style.height = '100%';
-    waveAnimation.style.zIndex = '9999'; // Pastikan berada di atas semua elemen
+    waveAnimation.style.zIndex = '9999'; // Ensure it is above all elements
 
-    // Menambahkan delay sebelum menyembunyikan efek gelombang
+    // Hide wave effect after delay
     setTimeout(() => {
-        waveAnimation.style.display = 'none'; // Sembunyikan efek gelombang
-    }, 1000); // Menampilkan gelombang selama 1 detik
+        waveAnimation.style.display = 'none'; // Hide wave after 1 second
+    }, 1000); 
 
-    // Mengosongkan nilai semua input
+    // Clear all input values
     document.getElementById('fullname').value = '';
     document.getElementById('nickname').value = '';
     document.getElementById('email').value = '';
@@ -90,13 +88,13 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     document.getElementById('address').value = '';
     document.getElementById('captcha').value = '';
 
-    // Redirect ke halaman produk setelah loading
+    // Redirect to product page after loading
     setTimeout(() => {
-        window.location.href = 'produk.html'; // Ganti dengan halaman produk
-    }, 2000); // Waktu loading 2 detik
+        window.location.href = 'produk.html'; // Change to your product page
+    }, 2000); // 2 seconds loading
 });
 
-// Partikel efek di canvas
+// Particle effect in canvas
 const canvas = document.getElementById('particle-canvas');
 const ctx = canvas.getContext('2d');
 
@@ -105,7 +103,7 @@ let particles = [];
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-// Partikel class
+// Particle class
 class Particle {
     constructor(x, y) {
         this.x = x;
@@ -119,7 +117,7 @@ class Particle {
         this.x += this.speedX;
         this.y += this.speedY;
 
-        // Pindahkan partikel ke sisi lain jika melewati batas
+        // Reset particle position if it goes out of bounds
         if (this.size < 0.1) {
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
@@ -135,14 +133,14 @@ class Particle {
     }
 }
 
-// Generate partikel
+// Generate particles
 function init() {
     for (let i = 0; i < 100; i++) {
         particles.push(new Particle(Math.random() * canvas.width, Math.random() * canvas.height));
     }
 }
 
-// Update dan gambar partikel
+// Update and draw particles
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     particles.forEach(particle => {
