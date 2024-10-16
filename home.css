@@ -151,7 +151,6 @@ footer {
     z-index: 9998; /* Pastikan berada di atas elemen lainnya */
 }
 
-
 @keyframes wave {
     0%, 100% {
         transform: translateY(0);
