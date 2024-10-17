@@ -61,6 +61,35 @@ header {
     border-color: #6EBF8B;
     outline: none;
 }
+.captcha {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.captcha label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333; /* Warna teks label */
+}
+
+#captcha-images {
+    display: flex; /* Menyusun gambar dalam baris */
+    gap: 10px; /* Jarak antar gambar */
+    margin-bottom: 10px; /* Jarak bawah */
+}
+
+.captcha-img {
+    width: 50px; /* Ukuran lebar gambar */
+    height: auto; /* Menjaga rasio aspek gambar */
+    border: 1px solid #ccc; /* Batas untuk gambar */
+    border-radius: 5px; /* Membuat sudut gambar melengkung */
+    transition: transform 0.3s ease; /* Transisi saat hover */
+}
+
+.captcha-img:hover {
+    transform: scale(1.1); /* Membesarkan gambar saat di-hover */
+}
 
 button {
     width: 100%;
