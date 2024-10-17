@@ -6,18 +6,18 @@ if (isFirstVisit) {
     const loading = document.getElementById('loading');
     const burgerEmoji = document.querySelector('.emoji');
 
-    // Display loading screen
+    // Show loading screen
     loading.style.display = 'flex'; 
     burgerEmoji.style.display = 'block'; 
 
     // After 2 seconds, hide the loading screen and show the login form
     setTimeout(() => {
         loading.style.display = 'none'; // Hide the loading screen
-        document.getElementById('login-container').style.display = 'block'; // Show the login form
+        document.getElementById('login-container').style.display = 'block'; // Show login form
 
         // Mark that the user has visited
         localStorage.setItem('hasVisited', true);
-    }, 2000); // Show loading for 2 seconds
+    }, 2000); // 2 seconds loading
 } else {
     // If it's not the first visit, just show the login form immediately
     document.getElementById('login-container').style.display = 'block';
@@ -25,7 +25,7 @@ if (isFirstVisit) {
 
 // Handling login form submission
 document.getElementById('login-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault(); // Prevent default form submission
 
     // Get form values
     const fullname = document.getElementById('fullname').value;
@@ -66,14 +66,6 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     // Show wave effect
     const waveAnimation = document.getElementById('wave-animation');
     waveAnimation.style.display = 'flex';
-
-    // Set wave for full screen
-    waveAnimation.style.position = 'fixed';
-    waveAnimation.style.top = '0';
-    waveAnimation.style.left = '0';
-    waveAnimation.style.width = '100%';
-    waveAnimation.style.height = '100%';
-    waveAnimation.style.zIndex = '9999'; // Ensure it is above all elements
 
     // Hide wave effect after delay
     setTimeout(() => {
@@ -117,7 +109,6 @@ class Particle {
         this.x += this.speedX;
         this.y += this.speedY;
 
-        // Reset particle position if it goes out of bounds
         if (this.size < 0.1) {
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
