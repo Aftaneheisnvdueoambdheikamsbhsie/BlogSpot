@@ -23,6 +23,7 @@ if (isFirstVisit) {
     document.getElementById('login-container').style.display = 'block';
 }
 
+
 // Handling login form submission
 document.getElementById('login-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission
