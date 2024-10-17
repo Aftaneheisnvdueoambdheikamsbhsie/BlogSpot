@@ -10,17 +10,17 @@ body {
 }
 
 header {
-    background-color: #AAC4C1; /* Sage muda */
+    background-color: #AAC4C1;
     padding: 15px 20px;
     display: flex;
-    justify-content: center; /* Center the logo */
+    justify-content: center;
     align-items: center;
 }
 
 .logo {
     font-size: 28px;
     font-weight: bold;
-    color: #FFFFFF; /* White logo text */
+    color: #FFFFFF;
 }
 
 .login-form {
@@ -47,7 +47,7 @@ header {
 .form-group label {
     margin-bottom: 5px;
     font-size: 14px;
-    color: #333; /* Darker text color */
+    color: #333;
 }
 
 .form-group input {
@@ -58,14 +58,14 @@ header {
 }
 
 .form-group input:focus {
-    border-color: #6EBF8B; /* Sage focus */
+    border-color: #6EBF8B;
     outline: none;
 }
 
 button {
     width: 100%;
     padding: 12px;
-    background-color: #6EBF8B; /* Sage */
+    background-color: #6EBF8B;
     color: white;
     border: none;
     border-radius: 5px;
@@ -75,7 +75,7 @@ button {
 }
 
 button:hover {
-    background-color: #5da778; /* Darker sage */
+    background-color: #5da778;
 }
 
 footer {
@@ -83,7 +83,7 @@ footer {
     color: white;
     padding: 15px 20px;
     text-align: center;
-    margin-top: auto; /* Push footer to the bottom */
+    margin-top: auto;
 }
 
 .footer-logo {
@@ -98,65 +98,51 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 100px); /* Adjust height to center vertically */
-    text-align: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Gelap background untuk loading */
     z-index: 9999;
 }
 
 .emoji {
-    font-size: 80px; /* Larger emoji */
-    animation: eat 1s linear infinite; /* Add animation */
-    color: white; /* Buat emoji terlihat jelas */
+    font-size: 80px;
+    color: white;
+    animation: eat 1s linear infinite;
 }
 
 @keyframes eat {
     0% { transform: scale(1); }
-    50% { transform: scale(1.2); } /* Slightly bigger */
+    50% { transform: scale(1.2); }
     100% { transform: scale(1); }
-}
-
-/* Responsive Styles */
-@media (max-width: 500px) {
-    .login-form {
-        padding: 20px;
-        width: 90%; /* Responsive form width */
-    }
-
-    .logo {
-        font-size: 24px; /* Smaller logo on mobile */
-    }
 }
 
 /* Wave Animation Styles */
 #wave-animation {
-    display: none; /* Awalnya disembunyikan */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.5); /* Warna gelombang */
-    z-index: 9999; /* Pastikan berada di atas elemen lainnya */
-    transition: opacity 0.5s ease; /* Efek transisi */
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 9998;
+    transition: opacity 0.5s ease;
 }
 
-/* Fullscreen effect styles */
+/* Fullscreen effect */
 .fullscreen-effect {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Warna latar belakang */
-    opacity: 0; /* Mulai tidak terlihat */
-    transition: opacity 0.5s ease; /* Efek transisi */
-    z-index: 9998; /* Pastikan berada di atas elemen lainnya */
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 9997;
 }
 
 /* Particle Effect Styles */
@@ -166,5 +152,5 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Agar canvas tidak menghalangi interaksi */
+    pointer-events: none;
 }
