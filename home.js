@@ -36,10 +36,53 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     const captcha = document.getElementById('captcha').value;
 
     // Check captcha
-    if (captcha !== '5') {
+    // Array of images with corresponding numbers
+const captchaImages = [
+    { img: 'angka2.png', value: 2 },
+    { img: 'angka0.png', value: 0 },
+    { img: 'angka5.png', value: 5 }
+];
+
+// Randomly pick 3 images
+const randomImages = [];
+while (randomImages.length < 3) {
+    const randomImage = captchaImages[Math.floor(Math.random() * captchaImages.length)];
+    if (!randomImages.includes(randomImage)) {
+        randomImages.push(randomImage);
+    }
+}
+
+// Display the random images
+const captchaContainer = document.getElementById('captcha-images');
+captchaContainer.innerHTML = ''; // Clear existing images
+randomImages.forEach(imgObj => {
+    const imgElement = document.createElement('img');
+    imgElement.src = imgObj.img;
+    imgElement.alt = imgObj.value;
+    imgElement.classList.add('captcha-img');
+    captchaContainer.appendChild(imgElement);
+});
+
+// Generate the random math question
+const question = `What is ${randomImages[0].value} + ${randomImages[1].value} * ${randomImages[2].value}?`;
+document.querySelector('.captcha label').innerText = "Captcha: " + question;
+
+// Check answer on form submit
+document.getElementById('login-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const correctAnswer = randomImages[0].value + randomImages[1].value * randomImages[2].value;
+    const userAnswer = document.getElementById('captcha').value;
+
+    if (parseInt(userAnswer) !== correctAnswer) {
         alert('Captcha tidak benar. Silakan coba lagi.');
         return;
     }
+
+    // Proceed with form submission
+    alert('Login berhasil!');
+});
+
 
     // Save user information to localStorage (if needed)
     localStorage.setItem('user', JSON.stringify({ fullname, nickname, email, address }));
