@@ -37,6 +37,29 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     const captcha = document.getElementById('captcha').value;
 
     // Check captcha
+    // Function to generate random CAPTCHA question
+function generateCaptcha() {
+    const randomIndex = Math.floor(Math.random() * captchaQuestions.length);
+    const captchaQuestion = captchaQuestions[randomIndex];
+
+    // Display the question in the HTML
+    document.getElementById('captcha-question').innerText = `Captcha: ${captchaQuestion.question}`;
+
+    // Display corresponding images
+    const captchaImagesContainer = document.getElementById('captcha-images');
+    captchaImagesContainer.innerHTML = ''; // Clear previous images
+    captchaQuestion.images.forEach(imageSrc => {
+        const img = document.createElement('img');
+        img.src = imageSrc;
+        img.alt = imageSrc; // Set alt text
+        img.className = 'captcha-img'; // Add class for styling
+        captchaImagesContainer.appendChild(img);
+    });
+
+    // Return the correct answer
+    return captchaQuestion.answer;
+}
+
 // Array of CAPTCHA questions and answers with images
 const captchaQuestions = [
     {
@@ -60,31 +83,10 @@ const captchaQuestions = [
         images: ["3.png", "0.png"]
     },
 ];
-
-// Function to generate random CAPTCHA question
-function generateCaptcha() {
-    const randomIndex = Math.floor(Math.random() * captchaQuestions.length);
-    const captchaQuestion = captchaQuestions[randomIndex];
-
-    // Display the question in the HTML
-    document.getElementById('captcha-question').innerText = `Captcha: ${captchaQuestion.question}`;
-
-    // Display corresponding images
-    const captchaImagesContainer = document.getElementById('captcha-images');
-    captchaImagesContainer.innerHTML = ''; // Clear previous images
-    captchaQuestion.images.forEach(imageSrc => {
-        const img = document.createElement('img');
-        img.src = imageSrc;
-        img.alt = imageSrc; // Set alt text
-        img.className = 'captcha-img'; // Add class for styling
-        captchaImagesContainer.appendChild(img);
-    });
-
-    // Return the correct answer
-    return captchaQuestion.answer;
-}
-
-
+// Call generateCaptcha when page loads
+window.onload = function() {
+    generateCaptcha();
+};
 
     // Save user information to localStorage (if needed)
     localStorage.setItem('user', JSON.stringify({ fullname, nickname, email, address }));
