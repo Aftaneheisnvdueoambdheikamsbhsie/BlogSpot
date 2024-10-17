@@ -36,52 +36,53 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     const captcha = document.getElementById('captcha').value;
 
     // Check captcha
-    // Array of images with corresponding numbers
-const captchaImages = [
-    { img: 'angka2.png', value: 2 },
-    { img: 'angka0.png', value: 0 },
-    { img: 'angka5.png', value: 5 }
+// Array of CAPTCHA questions and answers with images
+const captchaQuestions = [
+    {
+        question: "What is 2 + 3?",
+        answer: "5",
+        images: ["2.png", "3.png"]
+    },
+    {
+        question: "What is 5 - 2?",
+        answer: "3",
+        images: ["5.png", "2.png"]
+    },
+    {
+        question: "What is 5 + 2 * 0?",
+        answer: "5",
+        images: ["5.png", "0.png", "2.png"]
+    },
+    {
+        question: "What is 3 + 0?",
+        answer: "3",
+        images: ["3.png", "0.png"]
+    },
 ];
 
-// Randomly pick 3 images
-const randomImages = [];
-while (randomImages.length < 3) {
-    const randomImage = captchaImages[Math.floor(Math.random() * captchaImages.length)];
-    if (!randomImages.includes(randomImage)) {
-        randomImages.push(randomImage);
-    }
+// Function to generate random CAPTCHA question
+function generateCaptcha() {
+    const randomIndex = Math.floor(Math.random() * captchaQuestions.length);
+    const captchaQuestion = captchaQuestions[randomIndex];
+
+    // Display the question in the HTML
+    document.getElementById('captcha-question').innerText = `Captcha: ${captchaQuestion.question}`;
+
+    // Display corresponding images
+    const captchaImagesContainer = document.getElementById('captcha-images');
+    captchaImagesContainer.innerHTML = ''; // Clear previous images
+    captchaQuestion.images.forEach(imageSrc => {
+        const img = document.createElement('img');
+        img.src = imageSrc;
+        img.alt = imageSrc; // Set alt text
+        img.className = 'captcha-img'; // Add class for styling
+        captchaImagesContainer.appendChild(img);
+    });
+
+    // Return the correct answer
+    return captchaQuestion.answer;
 }
 
-// Display the random images
-const captchaContainer = document.getElementById('captcha-images');
-captchaContainer.innerHTML = ''; // Clear existing images
-randomImages.forEach(imgObj => {
-    const imgElement = document.createElement('img');
-    imgElement.src = imgObj.img;
-    imgElement.alt = imgObj.value;
-    imgElement.classList.add('captcha-img');
-    captchaContainer.appendChild(imgElement);
-});
-
-// Generate the random math question
-const question = `What is ${randomImages[0].value} + ${randomImages[1].value} * ${randomImages[2].value}?`;
-document.querySelector('.captcha label').innerText = "Captcha: " + question;
-
-// Check answer on form submit
-document.getElementById('login-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const correctAnswer = randomImages[0].value + randomImages[1].value * randomImages[2].value;
-    const userAnswer = document.getElementById('captcha').value;
-
-    if (parseInt(userAnswer) !== correctAnswer) {
-        alert('Captcha tidak benar. Silakan coba lagi.');
-        return;
-    }
-
-    // Proceed with form submission
-    alert('Login berhasil!');
-});
 
 
     // Save user information to localStorage (if needed)
