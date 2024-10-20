@@ -23,21 +23,7 @@ if (isFirstVisit) {
     document.getElementById('login-container').style.display = 'block';
 }
 
-
-// Handling login form submission
-document.getElementById('login-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent default form submission
-
-    // Get form values
-    const fullname = document.getElementById('fullname').value;
-    const nickname = document.getElementById('nickname').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const address = document.getElementById('address').value;
-    const captcha = document.getElementById('captcha').value;
-
-    // Check captcha
-    // Function to generate random CAPTCHA question
+// Function to generate random CAPTCHA question
 function generateCaptcha() {
     const randomIndex = Math.floor(Math.random() * captchaQuestions.length);
     const captchaQuestion = captchaQuestions[randomIndex];
@@ -83,10 +69,31 @@ const captchaQuestions = [
         images: ["3.png", "0.png"]
     },
 ];
+
 // Call generateCaptcha when page loads
+let correctCaptchaAnswer;
 window.onload = function() {
-    generateCaptcha();
+    correctCaptchaAnswer = generateCaptcha();
 };
+
+// Handling login form submission
+document.getElementById('login-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Get form values
+    const fullname = document.getElementById('fullname').value;
+    const nickname = document.getElementById('nickname').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const address = document.getElementById('address').value;
+    const captcha = document.getElementById('captcha').value;
+
+    // Check CAPTCHA answer
+    if (captcha !== correctCaptchaAnswer) {
+        alert("Incorrect CAPTCHA, please try again.");
+        correctCaptchaAnswer = generateCaptcha(); // Randomize CAPTCHA again
+        return; // Stop form submission
+    }
 
     // Save user information to localStorage (if needed)
     localStorage.setItem('user', JSON.stringify({ fullname, nickname, email, address }));
@@ -166,7 +173,7 @@ class Particle {
     draw() {
         ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.arc(this.x, this.size, this.size, 0, Math.PI * 2);
         ctx.fill();
     }
 }
