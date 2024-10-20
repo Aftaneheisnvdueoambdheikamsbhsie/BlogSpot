@@ -135,9 +135,26 @@ footer {
     width: 100%;
     z-index: 9999;
 }
-.p {
-    text-color:white;
+.loading-text {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+    animation: fadeInOut 2s infinite; /* Menambahkan animasi fade in-out */
 }
+
+/* Animasi untuk fade in dan out */
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
 .emoji {
     font-size: 80px;
     color: white;
