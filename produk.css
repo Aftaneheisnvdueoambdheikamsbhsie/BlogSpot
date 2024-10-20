@@ -238,12 +238,13 @@
         display: flex; /* Use flex to keep items side by side */
         justify-content: space-between; /* Space them out */
         align-items: center; /* Center align */
+        flex-wrap: wrap; /* Allow wrapping */
     }
 
     .filter-bar, .sort-bar {
         flex: 1; /* Allow both bars to take equal width */
         min-width: 0; /* Prevent overflow */
-         margin: 0 5px;
+        margin: 5px;
     }
 
     .filter-bar, .sort-bar {
@@ -253,9 +254,10 @@
 
 /* Responsive adjustments for the elements inside */
 .filter-bar label, .sort-bar label {
-    margin-right: 10px;
     color: #444;
     font-weight: bold;
+    font-size: 14px; /* Smaller font size for labels */
+    margin-right: 5px; /* Reduce margin to prevent overlap */
 }
 
 .filter-bar select, .sort-bar select {
@@ -265,7 +267,7 @@
     background-color: #fff;
     color: #444;
     cursor: pointer;
-    min-width: 120px; /* Minimum width for selects */
+    min-width: 80px; /* Minimum width for selects */
 }
 
 /* Very small screens (smartphones) */
@@ -297,11 +299,11 @@
     }
 }
     .filter-bar label, .sort-bar label {
-        font-size: 14px; /* Smaller font size for labels */
+        font-size: 12px; /* Smaller font size for labels */
     }
 
     .filter-bar select, .sort-bar select {
-        font-size: 14px; /* Smaller font size for select */
+        font-size: 12px; /* Smaller font size for select */
         width: 100%; /* Full width for selects */
     }
 
