@@ -240,8 +240,9 @@
     }
 
     .filter-bar, .sort-bar {
-        justify-content: space-between; /* Space out labels and selects */
+        justify-content:flex-start;/* Space out labels and selects */
         margin-bottom: 10px; /* Add space between rows */
+        flex: 1 1 100%; /* Full width for each bar */
     }
 
     .filter-bar select, .sort-bar select {
