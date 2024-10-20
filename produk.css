@@ -234,21 +234,32 @@
         max-width: 100px; /* Smaller product images */
     }
 
-  .filter-sort {
+      .filter-sort {
         flex-direction: column; /* Stack items vertically */
-        padding: 10px; /* Reduce padding */
     }
 
     .filter-bar, .sort-bar {
-        justify-content:flex-start;/* Space out labels and selects */
+        width: 100%; /* Full width for each bar */
+        justify-content: flex-start; /* Align items to the start */
         margin-bottom: 10px; /* Add space between rows */
-        flex: 1 1 100%; /* Full width for each bar */
     }
+}
 
-    .filter-bar select, .sort-bar select {
-        width: 100%; /* Full width for selects on smaller screens */
-        margin-top: 5px; /* Add margin for better spacing */
-    }
+/* Responsive adjustments for the elements inside */
+.filter-bar label, .sort-bar label {
+    margin-right: 10px;
+    color: #444;
+    font-weight: bold;
+}
+
+.filter-bar select, .sort-bar select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #6abf69;
+    background-color: #fff;
+    color: #444;
+    cursor: pointer;
+    min-width: 120px; /* Minimum width for selects */
 }
 /* Very small screens (smartphones) */
 @media only screen and (max-width: 480px) {
@@ -269,6 +280,7 @@
 
     .filter-bar select, .sort-bar select {
         font-size: 14px; /* Smaller font size for select */
+        width:100%;
     }
     /* Further adjustments for very small screens if needed */
 }
