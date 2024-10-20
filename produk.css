@@ -178,3 +178,85 @@
     font-size: 16px;
     color: #333;
 }
+/* Default styles (for desktop) remain as-is */
+
+/* Responsive styles for tablets and smaller devices */
+@media only screen and (max-width: 768px) {
+    .small-header {
+        height: 50px; /* Smaller height for smaller screens */
+        padding: 5px;
+    }
+
+    .small-header h1 {
+        font-size: 18px; /* Smaller font size */
+    }
+
+    .logo-small {
+        width: 35px; /* Smaller logo */
+        height: 35px;
+    }
+
+    .search-icon, .burger-icon {
+        font-size: 20px; /* Smaller icons */
+    }
+
+    /* Adjust sidebar menu */
+    #sidebar-menu {
+        width: 150px; /* Narrower sidebar for small screens */
+        padding: 15px;
+    }
+
+    .menu-items {
+        width: 150px; /* Adjust to fit smaller screen width */
+    }
+
+    .menu-item {
+        padding: 8px 10px; /* Smaller padding for menu items */
+        font-size: 14px;
+    }
+
+    .menu-btn {
+        font-size: 16px; /* Smaller button font */
+        padding: 5px;
+    }
+
+    .product-list {
+        padding: 10px;
+        flex-direction: column; /* Stack products vertically */
+    }
+
+    .product {
+        flex: 1 1 100%; /* Products take up full width on small screens */
+        margin-bottom: 15px;
+    }
+
+    .product img {
+        max-width: 100px; /* Smaller product images */
+    }
+
+    .filter-sort {
+        flex-direction: column; /* Stack filter and sort vertically */
+    }
+
+    .filter-bar, .sort-bar {
+        margin-bottom: 10px;
+    }
+}
+
+/* Very small screens (smartphones) */
+@media only screen and (max-width: 480px) {
+    .small-header {
+        height: 40px; /* Even smaller header */
+    }
+
+    .small-header h1 {
+        font-size: 16px;
+    }
+
+    .product img {
+        max-width: 80px; /* Even smaller product images */
+    }
+
+    /* Further adjustments for very small screens if needed */
+}
+
