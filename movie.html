@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Review</title>
+    <link rel="stylesheet" href="movie.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="AdM.webp" alt="MovieReview Logo">
+            <span>MovieReview</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#genres">Genres</a></li>
+                <li><a href="#new-releases">New Releases</a></li>
+                <li><a href="#top-rated">Top Rated</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Carousel -->
+    <section class="carousel">
+        <div class="carousel-item active" style="background-image: url('movie1.jpg');">
+            <h2>Featured Movie 1</h2>
+        </div>
+        <div class="carousel-item" style="background-image: url('movie2.jpg');">
+            <h2>Featured Movie 2</h2>
+        </div>
+        <div class="carousel-item" style="background-image: url('movie3.jpg');">
+            <h2>Featured Movie 3</h2>
+        </div>
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+    </section>
+
+    <!-- Movie Grid -->
+    <section class="movie-grid" id="genres">
+        <h2>Popular Movies</h2>
+        <div class="movies">
+            <div class="movie-card">
+                <img src="AdM.webp" alt="Movie Poster">
+                <h3>Movie Title 1</h3>
+                <p>Genre: Action</p>
+                <button>Read Review</button>
+            </div>
+            <div class="movie-card">
+                <img src="AdM.webp" alt="Movie Poster">
+                <h3>Movie Title 2</h3>
+                <p>Genre: Drama</p>
+                <button>Read Review</button>
+            </div>
+            <!-- Add more movie cards as needed -->
+        </div>
+    </section>
+    <!-- The rest of your content remains the same -->
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 MovieReview | All rights reserved.</p>
+        <p>Follow us on:
+            <a href="#">Facebook</a> |
+            <a href="#">Twitter</a> |
+            <a href="#">Instagram</a>
+        </p>
+    </footer>
+
+    <script src="movie.js"></script>
+</body>
+</html>
+
+
