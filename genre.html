@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genres - Movie Review</title>
+    <link rel="stylesheet" href="genre.css">
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="MovieReview Logo">
+            <span>MovieReview</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="genre.html">Genres</a></li>
+                <li><a href="#new-releases">New Releases</a></li>
+                <li><a href="#top-rated">Top Rated</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Genre Selection Section -->
+    <section class="genre-selection">
+        <h2>Explore by Genre</h2>
+        <select id="genreDropdown">
+            <option value="all">All Genres</option>
+            <option value="action">Action</option>
+            <option value="drama">Drama</option>
+            <option value="comedy">Comedy</option>
+            <!-- Add more genres as needed -->
+        </select>
+    </section>
+
+    <!-- Search and Sort Bar -->
+    <section class="search-sort">
+        <input type="text" id="searchBar" placeholder="Search movies...">
+        <select id="sortDropdown">
+            <option value="popularity">Popularity</option>
+            <option value="rating">Rating</option>
+            <option value="release">Release Date</option>
+        </select>
+    </section>
+
+    <!-- Movie List for Selected Genre -->
+    <section class="movie-list">
+        <div class="movies">
+            <div class="movie-card" data-genre="action">
+                <img src="AdM.webp" alt="Movie Poster">
+                <h3>Action Movie 1</h3>
+                <p>Rating: ⭐⭐⭐⭐</p>
+                <p>Release: 2022</p>
+                <p>Short synopsis for the movie goes here...</p>
+                <button class="review-button" data-movie="Action Movie 1">Read Review</button>
+            </div>
+            <div class="movie-card" data-genre="drama">
+                <img src="AdM.webp" alt="Movie Poster">
+                <h3>Drama Movie 1</h3>
+                <p>Rating: ⭐⭐⭐⭐</p>
+                <p>Release: 2021</p>
+                <p>Short synopsis for the movie goes here...</p>
+                <button class="review-button" data-movie="Drama Movie 1">Read Review</button>
+            </div>
+            <!-- Add more movie cards with different genres -->
+        </div>
+    </section>
+
+    <!-- Modal for Read Review -->
+    <div id="reviewModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="movieTitle"></h2>
+            <p id="movieReview">This is a sample review for the selected movie. Detailed review will be here.</p>
+        </div>
+    </div>
+
+    <script src="genre.js"></script>
+</body>
+</html>
