@@ -2,7 +2,7 @@ let currentSlide = 0;
 const slides = document.querySelectorAll('.carousel-item');
 const totalSlides = slides.length;
 const burgerMenu = document.getElementById('burgerMenu');
-const navLinks = document.getElementById('navLinks');
+const sideNav = document.getElementById('sideNav');
 
 document.querySelector('.next').addEventListener('click', () => {
     changeSlide(1);
@@ -16,17 +16,17 @@ function changeSlide(direction) {
     currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
     slides[currentSlide].classList.add('active');
 }
-
-// Show/hide menu on burger icon click
+// Show/hide sidebar on burger icon click
 burgerMenu.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+    sideNav.classList.toggle('active');
 });
 
-// Close menu when clicking outside of it
+// Close sidebar when clicking outside of it
 window.addEventListener('click', (event) => {
-    if (!burgerMenu.contains(event.target) && !navLinks.contains(event.target)) {
-        navLinks.classList.remove('active');
+    if (!burgerMenu.contains(event.target) && !sideNav.contains(event.target)) {
+        sideNav.classList.remove('active');
     }
 });
+
 
 
