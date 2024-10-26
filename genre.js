@@ -7,6 +7,22 @@ const modal = document.getElementById('reviewModal');
 const modalTitle = document.getElementById('movieTitle');
 const modalReview = document.getElementById('movieReview');
 const closeButton = document.querySelector('.close');
+const burgerMenu = document.getElementById('burgerMenu');
+const navLinks = document.getElementById('navLinks');
+
+
+// Show/hide menu on burger icon click
+burgerMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// Close menu when clicking outside of it
+window.addEventListener('click', (event) => {
+    if (!burgerMenu.contains(event.target) && !navLinks.contains(event.target)) {
+        navLinks.classList.remove('active');
+    }
+});
+
 
 // Filter movies by genre
 genreDropdown.addEventListener('change', () => {
