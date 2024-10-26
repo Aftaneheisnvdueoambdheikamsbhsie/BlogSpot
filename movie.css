@@ -54,7 +54,8 @@ header {
 #sideNav ul {
     list-style: none;
     padding: 0;
-    text-align: center;
+    text-align: left;
+    padding-left: 1.5rem;
 }
 
 #sideNav ul li {
