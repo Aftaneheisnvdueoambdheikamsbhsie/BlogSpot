@@ -126,3 +126,90 @@ nav a:hover {
     font-size: 1.5rem;
     cursor: pointer;
 }
+
+/* Media Query for Mobile Devices (screen width 768px and below) */
+@media (max-width: 768px) {
+    /* Header and Navigation */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Genre and Search Filter */
+    .genre-selection, .search-sort {
+        margin: 1rem;
+    }
+
+    /* Movie Cards */
+    .movie-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .movie-card {
+        width: 90%;
+        margin-bottom: 1rem;
+    }
+
+    /* Modal */
+    .modal-content {
+        width: 90%;
+        padding: 1rem;
+    }
+}
+
+/* Media Query for Extra Small Devices (screen width 480px and below) */
+@media (max-width: 480px) {
+    /* Adjust font sizes and spacing for very small screens */
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        padding: 0.5rem;
+    }
+
+    .logo img {
+        height: 30px;
+    }
+
+    /* Search and Sort Filter */
+    .search-sort input, .search-sort select, .genre-selection select {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.4rem;
+    }
+
+    /* Movie Card Adjustments */
+    .movie-card {
+        width: 100%;
+    }
+
+    .movie-card img {
+        height: auto;
+        max-width: 100%;
+    }
+
+    .review-button {
+        padding: 0.4rem;
+        font-size: 0.9rem;
+    }
+
+    /* Modal */
+    .modal-content {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+}
