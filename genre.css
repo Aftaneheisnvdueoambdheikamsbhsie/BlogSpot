@@ -15,6 +15,26 @@ header {
     padding: 1rem;
 }
 /* Burger menu styling */
+/* Sidebar Hidden by Default */
+#sideNav {
+    position: fixed;
+    left: -50%;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background-color: #333;
+    color: white;
+    transition: left 0.3s;
+    z-index: 1000;
+    padding-top: 2rem;
+}
+
+/* Sidebar active state */
+#sideNav.active {
+    left: 0;
+}
+
+/* Burger Menu Icon */
 .burger-menu {
     display: none;
     font-size: 1.8rem;
@@ -23,37 +43,33 @@ header {
 }
 
 @media (max-width: 768px) {
-    /* Hide regular nav menu */
-    nav#navLinks {
-        display: none;
-    }
-
-    /* Show burger menu icon */
     .burger-menu {
         display: block;
     }
-
-    /* Burger Menu Expanded */
-    nav#navLinks.active {
-        display: block;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #333;
-        width: 100%;
-        padding: 1rem 0;
-        text-align: center;
-    }
-
-    nav#navLinks ul {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    nav#navLinks ul li {
-        width: 100%;
-    }
 }
+
+/* Sidebar Links */
+#sideNav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+#sideNav ul li {
+    margin: 1.5rem 0;
+}
+
+#sideNav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+#sideNav ul li a:hover {
+    color: #f9a825;
+}
+
 
 .logo {
     display: flex;
