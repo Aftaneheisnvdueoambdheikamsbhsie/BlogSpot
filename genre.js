@@ -36,7 +36,14 @@ reviewButtons.forEach(button => {
     button.addEventListener('click', () => {
         const movieTitle = button.getAttribute('data-movie');
         modalTitle.innerText = movieTitle;
-        modalReview.innerText = `This is a sample review for ${movieTitle}. Add more details here.`;
+
+        // Add review content for each movie
+        if (movieTitle === "Eclipse of Tomorrow") {
+            modalReview.innerText = `*Eclipse of Tomorrow* membawa kita ke tahun 2049, di mana umat manusia berada di ambang kehancuran akibat perubahan iklim dan ketegangan geopolitik. Dibintangi oleh Emily Blunt dan Oscar Isaac, film ini menampilkan alur cerita yang mendalam dengan visual futuristik yang memukau. Rating: ⭐⭐⭐⭐⭐ (5/5)`;
+        } else {
+            modalReview.innerText = `This is a sample review for ${movieTitle}. Add more details here.`;
+        }
+
         modal.style.display = 'flex';
     });
 });
