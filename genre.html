@@ -15,7 +15,7 @@
         </div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="movie.html">Home</a></li>
                 <li><a href="genre.html">Genres</a></li>
                 <li><a href="#new-releases">New Releases</a></li>
                 <li><a href="#top-rated">Top Rated</a></li>
@@ -31,7 +31,7 @@
             <option value="all">All Genres</option>
             <option value="action">Action</option>
             <option value="drama">Drama</option>
-            <option value="comedy">Comedy</option>
+            <option value="sci-fi">Sci-Fi</option>
             <!-- Add more genres as needed -->
         </select>
     </section>
@@ -49,8 +49,9 @@
     <!-- Movie List for Selected Genre -->
     <section class="movie-list">
         <div class="movies">
+            <!-- Existing Movie Cards -->
             <div class="movie-card" data-genre="action">
-                <img src="AdM.webp" alt="Movie Poster">
+                <img src="movie1.jpg" alt="Movie Poster">
                 <h3>Action Movie 1</h3>
                 <p>Rating: ⭐⭐⭐⭐</p>
                 <p>Release: 2022</p>
@@ -58,14 +59,23 @@
                 <button class="review-button" data-movie="Action Movie 1">Read Review</button>
             </div>
             <div class="movie-card" data-genre="drama">
-                <img src="AdM.webp" alt="Movie Poster">
+                <img src="movie2.jpg" alt="Movie Poster">
                 <h3>Drama Movie 1</h3>
                 <p>Rating: ⭐⭐⭐⭐</p>
                 <p>Release: 2021</p>
                 <p>Short synopsis for the movie goes here...</p>
                 <button class="review-button" data-movie="Drama Movie 1">Read Review</button>
             </div>
-            <!-- Add more movie cards with different genres -->
+
+            <!-- New Movie Card for "Eclipse of Tomorrow" -->
+            <div class="movie-card" data-genre="sci-fi">
+                <img src="eclipse_of_tomorrow.jpg" alt="Eclipse of Tomorrow Poster">
+                <h3>Eclipse of Tomorrow</h3>
+                <p>Rating: ⭐⭐⭐⭐⭐</p>
+                <p>Release: 2024</p>
+                <p>A thrilling sci-fi that questions humanity’s future amid climate and tech crises.</p>
+                <button class="review-button" data-movie="Eclipse of Tomorrow">Read Review</button>
+            </div>
         </div>
     </section>
 
